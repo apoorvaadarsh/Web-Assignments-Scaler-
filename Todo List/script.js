@@ -1,4 +1,4 @@
-let tasks = "";
+let tasks = [];
 inputField = document.getElementById('taskTextField');
 addButton = document.getElementById('add');
 deleteButton = document.getElementById('delete');
@@ -18,15 +18,17 @@ function retrieveTasks() {
 
 function renderTasks() {
     listItems.innerHTML = ""; //that means all the HTML tags inside it will be cleared , so no li elements inside it now
-    // for (let i = 0; i < tasks.length; i++) {
-    //     listItems.append(tasks);
-    // }
-    listItems.innerHTML=tasks;
+    for (let i = 0; i < tasks.length; i++) {
+        let li = document.createElement('li');
+        let checkBox=`<input type='checkbox' id=${i}><span>${tasks[i]}</span>`;
+        li.innerHTML = checkBox;
+        listItems.append(li);
+    }
 }
 
 function clearAllTasks() {
     listItems.innerHTML = "";
-    tasks = "";
+    tasks = [];
     storeTasks();
 }
 
@@ -39,25 +41,18 @@ function addTask() {
     }
 
     else {
-        // let li = document.createElement('li');
-        let checkBox=`<li><input type='checkbox' id=${i}><span>${tasks[i]}</span></li>`;
-        // li.innerHTML = checkBox;
-        tasks+=checkBox;
+        tasks.push(newTask);
         renderTasks();
         storeTasks();
     }
 }
 
-// function deleteTask() {
-//     //delete one task
-// }
+function deleteTask() {
+    //delete one task
+}
 
 function deleteSelectedTasks() {
     //delete selected tasks
-    for(i=0;i<tasks.length;i++){
-        let li=listItems
-    }
-       
 }
 
 //button Functions
