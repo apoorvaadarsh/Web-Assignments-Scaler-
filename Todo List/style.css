@@ -1,0 +1,41 @@
+@font-face {
+    font-family: handwriting;
+    src: url(./assets/fonts/Architects_Daughter/ArchitectsDaughter-Regular.ttf);
+}
+
+input#taskTextField{
+ width: 200px;
+ height: 20px;
+ padding: auto;
+ border-radius: 6px;
+ margin: 10px;
+}
+
+li>input[type='checkbox']{
+    margin-right: 10px;
+}
+
+li>input[type='checkbox']:checked+span{
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+li{
+    font-family:handwriting;
+}
+
+button{
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    /* background-color: red; */
+}
+
+button#add{
+    background-color:green;
+    /* background: url(add.png); */
+}
+
+button#delete{
+    background-color: red;
+}

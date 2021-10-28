@@ -1,0 +1,61 @@
+.button {
+    width: 700px;
+    height: 400px;
+    background-color: lightblue;
+    cursor: pointer;
+    position: relative;
+}
+
+.enemy {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    animation-name: enemy;
+    animation-iteration-count: infinite;
+}
+
+.enemy#one {
+    left: 200px;
+    animation-duration: 4s;
+}
+
+.enemy#two {
+    left: 400px;
+    animation-duration: 3s;
+}
+
+.enemy#three {
+    left: 600px;
+    animation-duration: 2s;
+}
+
+.player {
+    background-color:blue;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+    animation-name: player;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.button:active > .player{
+    animation-play-state: running;
+}
+
+/* keyframes */
+
+@keyframes enemy {
+    50% {
+        transform: translateY(380px);
+    }
+}
+
+@keyframes player {
+    50% {
+        transform: translateX(680px);
+    }
+}
