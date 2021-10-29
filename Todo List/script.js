@@ -2,6 +2,8 @@ let tasks = [];
 inputField = document.getElementById('taskTextField');
 addButton = document.getElementById('add');
 deleteButton = document.getElementById('delete');
+clearButton=document.getElementById('clear');
+sortButton=document.getElementById('sort');
 listItems = document.getElementById('listItems');
 
 
@@ -53,6 +55,17 @@ function deleteTask() {
 
 function deleteSelectedTasks() {
     //delete selected tasks
+    let temp=[];
+    let li=listItems.getElementsByTagName('li');
+    console.log(li);
+    for(i=0;i<li.length;i++){
+        if(li[i].getElementsByTagName('input')[0].checked)
+          continue;
+        temp.push(tasks[i]);
+    }
+    tasks=temp;
+    renderTasks();
+    storeTasks();
 }
 
 //button Functions
@@ -61,8 +74,24 @@ addButton.onclick = function () {
 }
 
 deleteButton.onclick = function () {
+    deleteSelectedTasks();
+}
+
+sortButton.onclick=function(){
+    tasks.reverse();
+    storeTasks();
+    renderTasks();
+}
+
+clearButton.onclick=function(){
     clearAllTasks();
 }
+
+//triggers eneter key for add button 
+inputField.addEventListener("keyup",function(e){
+    if(e.key=='Enter')
+      addButton.onclick();
+})
 
 retrieveTasks();
 renderTasks();

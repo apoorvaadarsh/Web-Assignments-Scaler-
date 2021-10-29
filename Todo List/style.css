@@ -13,6 +13,7 @@ input#taskTextField{
 
 li>input[type='checkbox']{
     margin-right: 10px;
+    cursor: pointer;
 }
 
 li>input[type='checkbox']:checked+span{
@@ -24,18 +25,48 @@ li{
     font-family:handwriting;
 }
 
+div.buttonContainer{
+    position: absolute;
+    left: 250px;
+    top: 20px;
+    margin-left: 10px;
+}
+
 button{
     width: 30px;
     height: 30px;
     border-radius: 4px;
+    color: black;
+    padding: 4px;
+    margin: 2px;
+    background-size: 100%;
+    cursor: pointer;
+    border: none;
     /* background-color: red; */
 }
 
-button#add{
-    background-color:green;
-    /* background: url(add.png); */
+button#add{  
+   position: relative;
+   background-image: url(./assets/images/add.png);
+   /* left: 20px; */
 }
 
 button#delete{
-    background-color: red;
+    position: relative;
+    background-image: url(./assets/images/delete.png);
+    /* left: 20px; */
+}
+
+button#sort{
+    position: relative;
+    top: 35px;
+    left: -76px;
+    background-image: url(./assets/images/funnel.png);
+}
+
+button#clear{
+    position: relative;
+    top: 35px;
+    left: -76px;
+    background-image: url(./assets/images/clear.png);
 }

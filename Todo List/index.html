@@ -7,13 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script async defer src="script.js"></script>
-    <title>Document</title>
+    <title>To-Do Tasks</title>
 </head>
 
 <body>
     <input type="text" id="taskTextField" placeholder="Enter a new task">
-    <button id="add"></button>
-    <button id="delete"></button>
+    <div class="buttonContainer">
+        <button id="add" title="Add task"></button>
+        <button id="delete" title="Delete selected tasks"></button>
+        <button id="sort" title="Sort tasks"></button>
+        <button id="clear" title="Clear task list"></button>
+    </div>
+   <br><br><br>
     <ul id="listItems">
         <!-- <li><input type="checkbox" id="demo" name="Demo">Demo</li> -->
     </ul>
